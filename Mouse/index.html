@@ -24,6 +24,11 @@
                 height: 48px;
                 background-color: black;
             }
+
+            .box img {
+                width: 48px;
+                height: 48px;
+            }
         </style>
 
         <script>
@@ -32,6 +37,11 @@
                 const box = document.querySelector(".box");
 
                 window.addEventListener("mousemove", (event) => {
+                    console.log(event);
+
+                    // pageY: 페이지 기준
+                    // clientY: 브라우저 기준
+
                     h1.innerText = `x : ${event.pageX}, y : ${event.pageY}`;
                     box.style.top = event.pageY + "px";
                     box.style.left = event.pageX + "px";
@@ -41,6 +51,8 @@
     </head>
     <body>
         <h1>test</h1>
-        <div class="box"></div>
+        <div class="box">
+            <img src="./butterfly.gif" alt="" />
+        </div>
     </body>
 </html>
