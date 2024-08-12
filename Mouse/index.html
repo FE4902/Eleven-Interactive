@@ -4,6 +4,31 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Document</title>
+
+        <style>
+            body {
+                background-color: #13adcc;
+            }
+
+            h1 {
+                font-size: 32px;
+                padding: 20px;
+            }
+        </style>
+
+        <script>
+            window.onload = () => {
+                const h1 = document.querySelector("h1");
+                console.log(h1);
+
+                window.addEventListener("mousemove", (event) => {
+                    // console.log(event.pageX, event.pageY);
+                    h1.innerText = `x : ${event.pageX}, y : ${event.pageY}`;
+                });
+            };
+        </script>
     </head>
-    <body></body>
+    <body>
+        <h1>test</h1>
+    </body>
 </html>
