@@ -4,6 +4,50 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Document</title>
+        <style>
+            body {
+                background-color: bisque;
+                overflow: hidden;
+            }
+
+            .gateBox {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                width: 200px;
+                background-color: red;
+            }
+
+            .top {
+                padding: 20px;
+                background-color: white;
+            }
+
+            .bottom {
+                display: flex;
+                background-color: green;
+            }
+
+            .bottom a {
+                flex: 1;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 20px;
+                color: white;
+            }
+        </style>
     </head>
-    <body></body>
+    <body>
+        <div class="gateBox">
+            <div class="top">
+                <p>마스크를 써야하나요?</p>
+            </div>
+            <div class="bottom">
+                <a href="#yes">네</a>
+                <a href="#no">아니요</a>
+            </div>
+        </div>
+    </body>
 </html>
