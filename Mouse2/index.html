@@ -39,6 +39,12 @@
                 justify-content: center;
                 padding: 10px;
                 color: #fff;
+                transition: 0.3s;
+            }
+
+            .bottom a:hover {
+                color: #000;
+                background-color: #fff;
             }
 
             a + a {
@@ -50,6 +56,7 @@
                 top: 0;
                 left: 0;
                 z-index: 1000;
+                pointer-events: none;
             }
 
             .circle {
@@ -59,6 +66,7 @@
                 background-color: rgba(0, 0, 0, 0.5);
                 border-radius: 50%;
                 margin: -60px -60px;
+                transition: 0.3s ease-in-out;
             }
         </style>
 
@@ -70,10 +78,28 @@
                     targetY = 0;
                 const speed = 0.1;
                 const cursorItem = document.querySelector(".cursorItem");
+                const circle = cursorItem.querySelector(".circle");
+
+                const buttonAll = document.querySelectorAll(".bottom a");
+
+                buttonAll.forEach((item) => {
+                    item.addEventListener("mouseenter", () => {
+                        circle.style.transform = "scale(0.3)";
+                    });
+                    item.addEventListener("mouseleave", () => {
+                        circle.style.transform = "scale(1)";
+                    });
+                });
 
                 window.addEventListener("mousemove", (e) => {
                     x = e.pageX;
                     y = e.pageY;
+
+                    // if (e.target.nodeName === "A") {
+                    //     circle.style.transform = "scale(0.3)";
+                    // } else {
+                    //     circle.style.transform = "scale(1)";
+                    // }
                 });
 
                 const loop = () => {
