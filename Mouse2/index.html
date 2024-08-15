@@ -47,8 +47,8 @@
 
             .cursorItem {
                 position: absolute;
-                top: 200px;
-                left: 200px;
+                top: 0;
+                left: 0;
                 z-index: 1000;
             }
 
@@ -61,6 +61,34 @@
                 margin: -60px -60px;
             }
         </style>
+
+        <script>
+            window.onload = () => {
+                let x = 0,
+                    y = 0;
+                let targetX = 0,
+                    targetY = 0;
+                const speed = 0.1;
+                const cursorItem = document.querySelector(".cursorItem");
+
+                window.addEventListener("mousemove", (e) => {
+                    x = e.pageX;
+                    y = e.pageY;
+                });
+
+                const loop = () => {
+                    targetX += (x - targetX) * speed;
+                    targetY += (y - targetY) * speed;
+
+                    // cursorItem.style.left = targetX + "px";
+                    // cursorItem.style.top = targetY + "px";
+                    cursorItem.style.transform = `translate3d(${targetX}px, ${targetY}px, 0)`;
+
+                    window.requestAnimationFrame(loop);
+                };
+                loop();
+            };
+        </script>
     </head>
     <body>
         <div class="cursorItem">
