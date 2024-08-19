@@ -1,0 +1,80 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(
+        150deg,
+        #13f0cf,
+        #6d016d,
+        #220340,
+        #220340,
+        #000
+    );
+    overflow-x: hidden;
+    padding: 0;
+    margin: 0;
+}
+
+.depthWrap {
+    position: fixed;
+    bottom: 40px;
+    width: 100%;
+    padding: 10px;
+    color: #fff;
+    text-align: center;
+    border-bottom: 2px dashed #fff;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.depthWrap span {
+    width: 96px;
+    display: inline-block;
+    text-align: right;
+}
+
+.innerWrap {
+    padding: 40px;
+}
+
+.title {
+    margin-top: 70px;
+    font-size: 32px;
+    text-align: center;
+}
+
+.textWrap {
+    padding: 500px 40px;
+    margin: 40px 0;
+}
+
+.textWrap p {
+    color: #fff;
+    font-size: 32px;
+    text-align: center;
+}
+
+.textWrap img {
+    width: 100%;
+}
+
+.progressWrap {
+    z-index: 100;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.bar {
+    width: 0;
+    height: 5px;
+    background-color: #000;
+    transition: 0.3s;
+}
+
+.submarine {
+    position: fixed;
+    width: 160px;
+    top: 20%;
+    transition: 0.3s ease-out;
+}

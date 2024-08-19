@@ -4,117 +4,33 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Document</title>
-        <style>
-            body {
-                margin: 0;
-                padding: 0;
-                background: linear-gradient(
-                    150deg,
-                    #13f0cf,
-                    #ddf311,
-                    #2d9c9a,
-                    #220340,
-                    #220340,
-                    #000
-                );
-                overflow-x: hidden;
-            }
-
-            h1 {
-                position: fixed;
-                bottom: 40px;
-                width: 100%;
-                padding: 10px;
-                font-size: 32px;
-                color: #fff;
-                text-align: center;
-            }
-
-            .innerWrap {
-                padding: 40px;
-            }
-
-            .title {
-                margin-top: 70px;
-                font-size: 32px;
-                text-align: center;
-            }
-
-            .textWrap {
-                padding: 500px 40px;
-                margin: 40px 0;
-            }
-
-            .textWrap p {
-                color: #fff;
-                font-size: 32px;
-                text-align: center;
-            }
-
-            .textWrap img {
-                width: 100%;
-            }
-
-            .progressWrap {
-                z-index: 100;
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-            }
-
-            .bar {
-                width: 0;
-                height: 5px;
-                background-color: #000;
-                transition: 0.3s;
-            }
-        </style>
+        <link rel="stylesheet" href="./css/style.css" />
+        <script src="./js/common.js" defer></script>
     </head>
     <body>
         <div class="progressWrap">
             <div class="bar"></div>
         </div>
-        <h1>0m</h1>
+        <img class="submarine" src="./images/submarine.gif" alt="잠수함" />
         <div class="innerWrap">
             <h2 class="title">깊은 바다</h2>
             <div class="textWrap">
                 <p>대게</p>
-                <img src="./images/crab.png" alt="" />
+                <img src="./images/crab.png" alt="대게" />
             </div>
             <div class="textWrap">
                 <p>오징어</p>
-                <img src="./images/cuttle.png" alt="" />
+                <img src="./images/cuttle.png" alt="오징어" />
             </div>
             <div class="textWrap">
                 <p>방어</p>
-                <img src="./images/fish_01.png" alt="" />
+                <img src="./images/fish_01.png" alt="방어" />
             </div>
             <div class="textWrap">
                 <p>미역</p>
-                <img src="./images/seaweed.png" alt="" />
+                <img src="./images/seaweed.png" alt="미역" />
             </div>
         </div>
-        <script>
-            const h1 = document.querySelector("h1");
-            const progressBar = document.querySelector(".bar");
-            let scrollNum = 0;
-            let documentHeight = 0;
-            let per = 0;
-
-            window.addEventListener("scroll", () => {
-                scrollNum = window.scrollY;
-                documentHeight =
-                    document.body.scrollHeight - window.innerHeight;
-                per = percent(scrollNum, documentHeight) + "%";
-
-                h1.innerText = scrollNum + "METERS DEEP";
-                progressBar.style.width = per;
-            });
-
-            const percent = (num, total) => {
-                return ((num / total) * 100).toFixed(0);
-            };
-        </script>
+        <div class="depthWrap"><span>0</span> METERS DEEP</div>
     </body>
 </html>
