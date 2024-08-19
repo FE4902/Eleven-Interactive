@@ -22,28 +22,37 @@
 
             h1 {
                 position: fixed;
-                bottom: 5%;
+                bottom: 40px;
+                width: 100%;
                 padding: 10px;
-                font-size: 48px;
+                font-size: 32px;
                 color: #fff;
+                text-align: center;
             }
 
             .innerWrap {
-                width: 100%;
                 padding: 40px;
-                /* height: 10000px; */
             }
 
             .title {
-                width: 100%;
                 margin-top: 70px;
                 font-size: 32px;
                 text-align: center;
             }
 
             .textWrap {
-                padding: 500px 20px;
+                padding: 500px 40px;
                 margin: 40px 0;
+            }
+
+            .textWrap p {
+                color: #fff;
+                font-size: 32px;
+                text-align: center;
+            }
+
+            .textWrap img {
+                width: 100%;
             }
 
             .progressWrap {
@@ -70,22 +79,20 @@
         <div class="innerWrap">
             <h2 class="title">깊은 바다</h2>
             <div class="textWrap">
-                <p>붕어</p>
+                <p>대게</p>
+                <img src="./images/crab.png" alt="" />
             </div>
             <div class="textWrap">
                 <p>오징어</p>
+                <img src="./images/cuttle.png" alt="" />
             </div>
             <div class="textWrap">
-                <p>전기뱀장어</p>
+                <p>방어</p>
+                <img src="./images/fish_01.png" alt="" />
             </div>
             <div class="textWrap">
-                <p>낙지</p>
-            </div>
-            <div class="textWrap">
-                <p>대왕 오징어</p>
-            </div>
-            <div class="textWrap">
-                <p>심해어</p>
+                <p>미역</p>
+                <img src="./images/seaweed.png" alt="" />
             </div>
         </div>
         <script>
@@ -101,7 +108,7 @@
                     document.body.scrollHeight - window.innerHeight;
                 per = percent(scrollNum, documentHeight) + "%";
 
-                h1.innerText = scrollNum + "m";
+                h1.innerText = scrollNum + "METERS DEEP";
                 progressBar.style.width = per;
             });
 
